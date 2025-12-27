@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
+import { AdminSidebar } from '../admin-sidebar/admin-sidebar';
 
 @Component({
   selector: 'app-admin-layout',
-  imports: [RouterOutlet,CommonModule,RouterModule],
+  imports: [RouterOutlet,CommonModule,RouterModule,AdminSidebar],
   templateUrl: './admin-layout.html',
   styleUrl: './admin-layout.css',
 })

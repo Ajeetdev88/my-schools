@@ -10,22 +10,15 @@ import { RouterModule } from '@angular/router';
 })
 export class Studentlist {
 
-  students = [
+  results = [
     {
-      id: 1,
-      admissionNo: 'ADM001',
-      name: 'Rahul Sharma',
-      class: '10',
-      section: 'A',
-      mobile: '9876543210'
-    },
-    {
-      id: 2,
-      admissionNo: 'ADM002',
-      name: 'Anjali Verma',
-      class: '9',
-      section: 'B',
-      mobile: '9876543222'
+      term: 'First Term',
+      class: 'SS3A',
+      subject: 'Mathematics',
+      students: 42,
+      date: '2025-01-15',
+      by: 'Mr. Adeyemi',
+      status: 'completed'
     }
-  ];
+  ]
 }

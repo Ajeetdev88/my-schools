@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './admin-sidebar.css',
 })
 export class AdminSidebar {
-
+ sidebarOpen: boolean|false = true;   // default to open
+ toggleSidebar() {
+    this.sidebarOpen = !this.sidebarOpen;
+  }
 }
