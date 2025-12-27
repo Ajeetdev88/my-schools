@@ -1,0 +1,74 @@
+<div class="admin-wrapper">
+
+  <!-- SIDEBAR -->
+<aside class="sidebar"
+       [class.collapsed]="!sidebarOpen"
+       [class.open]="sidebarOpen">
+
+  <!-- LOGO -->
+  <div class="logo">
+    <i class="bi bi-mortarboard-fill logo-icon"></i>
+    <span class="logo-text">MySchool</span>
+  </div>
+
+  <!-- MENU -->
+  <ul class="menu">
+    <li>
+      <a routerLink="/academic/students/list">
+        <i class="bi bi-people icon"></i>
+        <span class="text">Students</span>
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="/academic/teachers">
+        <i class="bi bi-person-badge icon"></i>
+        <span class="text">Teachers</span>
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="/academic/exams">
+        <i class="bi bi-journal-text icon"></i>
+        <span class="text">Exams</span>
+      </a>
+    </li>
+  </ul>
+</aside>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- HEADER -->
+    <header class="header">
+
+      <!-- LEFT -->
+      <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+      <span class="title">Admin Dashboard</span>
+
+      <!-- RIGHT PROFILE -->
+      <div class="profile-wrapper" (click)="toggleProfile()">
+        <img src="https://i.pravatar.cc/40" class="avatar" />
+        <span class="name">Admin</span>
+
+        <!-- DROPDOWN -->
+        <div class="profile-dropdown" *ngIf="profileOpen">
+          <a routerLink="/profile">Profile</a>
+          <button (click)="logout()">Logout</button>
+        </div>
+      </div>
+
+    </header>
+
+    <!-- CONTENT -->
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      © 2025 MySchool
+    </footer>
+
+  </div>
+</div>

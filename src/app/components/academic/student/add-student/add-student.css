@@ -1,0 +1,61 @@
+/* Page background gradient */
+.page-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e3f2fd, #f8f9fa);
+  padding: 30px 0;
+}
+
+/* Card */
+.card {
+  border: none;
+  border-radius: 14px;
+}
+
+/* Header Gradient */
+.card-header {
+  background: linear-gradient(90deg, #1976d2, #42a5f5);
+  border-radius: 14px 14px 0 0;
+}
+
+/* Tabs Styling */
+.nav-tabs {
+  border-bottom: none;
+  gap: 12px;
+}
+
+.nav-tabs .nav-link {
+  border: none;
+  padding: 10px 22px;
+  border-radius: 30px;
+  background: #e9ecef;
+  color: #495057;
+  font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
+  background: linear-gradient(90deg, #1976d2, #42a5f5);
+  color: #fff;
+}
+
+/* Form Labels */
+.form-label {
+  font-weight: 500;
+}
+
+/* Wizard Buttons */
+.wizard-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.wizard-buttons .btn {
+  min-width: 120px;
+}
+
+/* Input focus */
+.form-control:focus,
+.form-select:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 0.15rem rgba(25, 118, 210, 0.25);
+}

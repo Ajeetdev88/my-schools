@@ -1,0 +1,170 @@
+<div class="page-bg">
+  <div class="container">
+
+    <div class="card shadow-lg">
+      <div class="card-header text-white">
+        <h4 class="mb-0">Student Admission</h4>
+      </div>
+
+      <div class="card-body">
+        <form [formGroup]="admissionForm">
+
+          <!-- Tabs -->
+          <ul class="nav nav-tabs justify-content-center mb-4" role="tablist">
+            <li class="nav-item">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#personalTab">Personal</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#parentTab">Parent</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#admissionTab">Admission</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#addressTab">Address</button>
+            </li>
+          </ul>
+
+                <div class="tab-content">
+
+          <!-- PERSONAL DETAILS -->
+          <div class="tab-pane fade show active" id="personalTab">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-control" formControlName="firstName">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-control" formControlName="lastName">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" formControlName="dob">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Gender</label>
+                <select class="form-select" formControlName="gender">
+                  <option value="">Select</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Mobile</label>
+                <input type="text" class="form-control" formControlName="mobile">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" formControlName="email">
+              </div>
+            </div>
+          </div>
+
+          <!-- PARENT DETAILS -->
+          <div class="tab-pane fade" id="parentTab">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Father Name</label>
+                <input type="text" class="form-control" formControlName="fatherName">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Father Mobile</label>
+                <input type="text" class="form-control" formControlName="fatherMobile">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Mother Name</label>
+                <input type="text" class="form-control" formControlName="motherName">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Guardian Name</label>
+                <input type="text" class="form-control" formControlName="guardianName">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Guardian Relation</label>
+                <input type="text" class="form-control" formControlName="guardianRelation">
+              </div>
+            </div>
+          </div>
+
+          <!-- ADMISSION DETAILS -->
+          <div class="tab-pane fade" id="admissionTab">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Admission No</label>
+                <input type="text" class="form-control" formControlName="admissionNo">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Admission Date</label>
+                <input type="date" class="form-control" formControlName="admissionDate">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Class</label>
+                <select class="form-select" formControlName="class">
+                  <option value="1">Class 1</option>
+                  <option value="2">Class 2</option>
+                  <option value="10">Class 10</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Section</label>
+                <input type="text" class="form-control" formControlName="section">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Academic Year</label>
+                <input type="text" class="form-control" formControlName="academicYear">
+              </div>
+            </div>
+          </div>
+
+          <!-- ADDRESS -->
+          <div class="tab-pane fade" id="addressTab">
+            <div class="row g-3">
+              <div class="col-12">
+                <label class="form-label">Address</label>
+                <textarea class="form-control" rows="3" formControlName="addressLine"></textarea>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">City</label>
+                <input type="text" class="form-control" formControlName="city">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">State</label>
+                <input type="text" class="form-control" formControlName="state">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Pincode</label>
+                <input type="text" class="form-control" formControlName="pincode">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+          <!-- Wizard Buttons -->
+          <div class="wizard-buttons">
+            <button type="button" class="btn btn-outline-secondary" (click)="prevTab()">Previous</button>
+
+            <button
+              *ngIf="!isLastTab"
+              type="button"
+              class="btn btn-primary"
+              (click)="nextTab()">
+              Next
+            </button>
+
+            <button
+              *ngIf="isLastTab"
+              class="btn btn-success"
+              [disabled]="admissionForm.invalid"
+              (click)="submitForm()">
+              Save Admission
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
